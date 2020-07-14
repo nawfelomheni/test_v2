@@ -15,6 +15,8 @@ stages{
 
       sh  'go build'
 
+
+}
 }
 stage('Test')
 {
@@ -39,7 +41,7 @@ sh """
 }
 
 
-}
+
 
 
     }
