@@ -16,6 +16,29 @@ stages{
       sh  'go build'
 
 }
+stage('Test')
+{
+
+environment{
+CODECOV_TOKEN = credentials('MY_SECRET')
+
+
+
+}
+steps
+{
+sh """
+   go test ./... -coverprofile=coverage.txt
+   curl -s https://codecov.io/bash | bash -s -
+"""
+}
+
+
+
+
+}
+
+
 }
 
 
